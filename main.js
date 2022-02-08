@@ -13,15 +13,18 @@ function setup(){
     document.getElementById("st").innerHTML="Status:detecting object "; 
 }
 function modelLoaded(){
-Status=true;
+    console.log("IN modelLoaded ");
+    Status=true;
 
 }
 function gotresult(error,result){
 if(error){
     console.log(error);
+}else{
+    console.log(result)
+    myObject=result
 }
-console.log(result)
-myObject=result
+
 }
 function draw(){
     image(Video,0,0,500,360)
